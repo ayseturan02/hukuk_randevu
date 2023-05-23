@@ -49,7 +49,7 @@ Route::fallback(function (){
    return view("hata");
 });
 
-Route::prefix("randevu")->group(function (){
+Route::prefix("layouts")->group(function (){
    Route::get("/kadro", function() {
        return view("kadro");
    });
