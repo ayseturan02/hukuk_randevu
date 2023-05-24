@@ -107,8 +107,11 @@
     <p class="heading">Giriş Yap</p>
     <input class="input" placeholder="E-posta" type="email" required>
     <input class="input" placeholder="Parola" type="password" required>
-    <button class="btn">Giriş Yap</button>
-    <button class="btn">Yönetici Girişi</button>
+    <div class="row mb-0">
+    <button class="btn" formaction = "home">Giriş Yap</button>
+    <button class="btn"formaction="onay">Yönetici Girişi</button>
+                
+    
 </form>
 
 

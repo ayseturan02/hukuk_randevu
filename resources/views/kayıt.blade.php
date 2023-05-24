@@ -112,7 +112,7 @@
     <input class="input" placeholder="Adres" type="text" required>
     <input class="input" placeholder="Tarih" type="date" required>
     <input class="input" placeholder="Şifre" type="password" required>
-    <button class="btn"formaction="kayitol.html">Kayıt Ol</button>
+    <button class="btn"formaction="giris">Kayıt Ol</button>
 </form>
 
 

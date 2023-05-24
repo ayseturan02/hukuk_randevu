@@ -21,7 +21,7 @@ Route::get('/randevu', [App\Http\Controllers\RandevuController::class, 'index2']
 Route::get('/e-tahsilat', [App\Http\Controllers\E_tahsilatController::class, 'index3'])->name('e-tahsilat');
 
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 })->name("welcome");
 
@@ -41,9 +41,6 @@ Route::get('/iletisim', function () {
     return view("iletisim");
 })->name("iletisim");
 
-Route::get('/randevu', function () {
-    return view("randevu");
-})->name("randevu");
 
 Route::fallback(function (){
    return view("hata");
