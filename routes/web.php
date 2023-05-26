@@ -15,23 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/randevu', [App\Http\Controllers\RandevuController::class, 'index2'])->name('randevu');
-Route::get('/e-tahsilat', [App\Http\Controllers\E_tahsilatController::class, 'index3'])->name('e-tahsilat');
 
+
+
+// Route::get('/home', function () {
+//     return view('home');
+// })->name("home");
+
+Route::get('/randevu', function () {
+    return view('randevu');
+})->name("randevu");
+
+Route::get('/e-tahsilat', function () {
+    return view('e-tahsilat');
+})->name("e-tahsilat");
 
 Route::get('', function () {
     return view('welcome');
 })->name("welcome");
 
-Route::get('/giris', function () {
-    return view('giris');
-})->name("giris");
-
-Route::get('/kayıt', function () {
-    return view('kayıt');
-})->name("kayıt");
 
 Route::get('/hizmetlerimiz', function () {
     return view("hizmetlerimiz");

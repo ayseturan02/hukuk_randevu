@@ -94,7 +94,7 @@
 
         h1 {
             font-family: fantasy;
-            position: absolute;
+            position: fixed;
             top: 5%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -104,15 +104,14 @@
 </head>
 <body style="background-color: #e3e3e3;">
 <form class="form">
-    <p class="heading">Kayıt Ol</p>
-    <input class="input" placeholder="İsim" type="text" required>
-    <input class="input" placeholder="Soyisim" type="text" required>
-    <input class="input" placeholder="E-posta" type="email" required>
-    <input class="input" placeholder="Telefon" type="tel" required>
-    <input class="input" placeholder="Adres" type="text" required>
-    <input class="input" placeholder="Tarih" type="date" required>
-    <input class="input" placeholder="Şifre" type="password" required>
-    <button class="btn"formaction="giris">Kayıt Ol</button>
+    <p class="heading">Giriş Yap</p>
+    <input class="input" placeholder="E-posta" type="email" name="E-posta" required>
+    <input class="input" placeholder="Şifre" type="password" name="Şifre" required>
+    <div class="row mb-0">
+    <button class="btn" href="home">Giriş Yap</button>
+    <button class="btn" href="onay">Yönetici Girişi</button>
+                
+    
 </form>
 
 
