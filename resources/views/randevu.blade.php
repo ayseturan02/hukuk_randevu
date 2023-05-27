@@ -61,8 +61,6 @@ h1{
   height: 150px;
   background-color: #ffffff;
   text-align: right;
-  
-  
   border: 1px solid transparentize(white, 0.25);
   background-color: transparentize(white, 0.8);
   color: transparentize(white, 0.1);
