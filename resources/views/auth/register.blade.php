@@ -1,139 +1,78 @@
-@extends('layouts.app_register')
+@extends('layouts.app')
 
 @section("content")
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="container-fluid">{{ __('KAYIT OL') }}</div>
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+<body style="background-color: #e3e3e3;">
+<form class="form" method="POST" action="{{ route('register') }}">
+        
+        @csrf
+        <p class="heading">Kayıt Ol</p>
 
-                            <div class="form-group row">
-                                <label for="İsim" class="col-md-4 col-form-label text-md-right">{{ __('İsim') }}</label>
+        <input class="input form-control @error('name') is-invalid @enderror" placeholder="İsim" type="text" name="name" value="{{ old('name') }}" required>
+        @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
 
-                                <div class="col-md-6">
-                                    <input id="İsim" type="text" class="form-control @error('İsim') is-invalid @enderror" name="İsim" value="{{ old('İsim') }}" required autocomplete="İsim" autofocus>
+        <input class="input form-control @error('surname') is-invalid @enderror" placeholder="Soyisim" type="text" name="surname" value="{{ old('surname') }}" required>
+        @error('surname')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
 
-                                    @error('İsim')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+        <input class="input form-control @error('email') is-invalid @enderror" placeholder="E-posta" type="email" name="email" value="{{ old('email') }}" required>
+        @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
 
-                            <div class="form-group row">
-                                <label for="Soyisim" class="col-md-4 col-form-label text-md-right">{{ __('Soyisim') }}</label>
+        <input class="input form-control @error('number') is-invalid @enderror" placeholder="Telefon" type="tel" name="number" value="{{ old('number') }}" required>
+        @error('number')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
 
-                                <div class="col-md-6">
-                                    <input id="Soyisim" type="text" class="form-control @error('Soyisim') is-invalid @enderror" name="Soyisim" value="{{ old('Soyisim') }}" required autocomplete="Soyisim" autofocus>
+        <input class="input form-control @error('address') is-invalid @enderror" placeholder="Adres" type="text" name="address" value="{{ old('address') }}" required>
+        @error('address')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+        <!-- Şifre onay alanını ekleyin -->
 
-                                    @error('Soyisim')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+        <input class="input form-control @error('password') is-invalid @enderror" placeholder="Şifre" type="password" name="password" required>
+        @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+        <!-- Şifre onay alanını ekleyin -->
+        <input class="input form-control" placeholder="Şifre Onayı" type="password" name="password_confirmation" required>
 
-                            <div class="form-group row">
-                                <label for="E-posta" class="col-md-4 col-form-label text-md-right">{{ __('E-posta Adresi') }}</label>
 
-                                <div class="col-md-6">
-                                    <input id="E-posta" type="E-posta" class="form-control @error('E-posta') is-invalid @enderror" name="E-posta" value="{{ old('E-posta') }}" required autocomplete="E-posta">
+        <input class="input form-control @error('birthdate') is-invalid @enderror" placeholder="Doğum Yılı" type="text" name="birthdate" value="{{ old('birthdate') }}" required>
+        @error('birthdate')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
 
-                                    @error('E-posta')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="Adres" class="col-md-4 col-form-label text-md-right">{{ __('Adres') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="Adres" type="text" class="form-control @error('Adres') is-invalid @enderror" name="Adres" value="{{ old('Adres') }}" required autocomplete="Adres" autofocus>
-
-                                    @error('Adres')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="Telefon" class="col-md-4 col-form-label text-md-right">{{ __('Telefon') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="Telefon" type="text" class="form-control @error('Telefon') is-invalid @enderror" name="Telefon" value="{{ old('Telefon') }}" required autocomplete="Telefon" autofocus>
-
-@error('Telefon')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-@enderror
-</div>
-</div>
-
-<div class="form-group row">
-                                <label for="Dogum_tarihi" class="col-md-4 col-form-label text-md-right">{{ __('Dogum_tarihi') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="Dogum_tarihi" type="text" class="form-control @error('Dogum_tarihi') is-invalid @enderror" name="Dogum_tarihi" value="{{ old('Dogum_tarihi') }}" required autocomplete="Dogum_tarihi" autofocus>
-
-@error('Dogum_tarihi')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-@enderror
-</div>
-</div>
+        <button class="btn" type="submit">Kayıt Ol</button>
+    </form>
+</body>
 
 
 
-<div class="form-group row">
-<label for="Şifre" class="col-md-4 col-form-label text-md-right">{{ __('Şifre') }}</label>
+    <div class="hr"></div>
+    <div class="hr" style="bottom: 0;"></div>
+    <h1> MAS HUKUK BÜROSU</h1>
+</body>
+</html>
 
-<div class="col-md-6">
-<input id="Şifre" type="password" class="form-control @error('Şifre') is-invalid @enderror" name="Şifre" required autocomplete="Şifre">
-
-@error('Şifre')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-@enderror
-</div>
-</div>
-
-<div class="form-group row">
-<label for="Şifreyi Onayla" class="col-md-4 col-form-label text-md-right">{{ __('Şifreyi Onayla') }}</label>
-
-<div class="col-md-6">
-<input id="Şifreyi Onayla" type="Şifreyi Onayla" class="form-control" name="Şifreyi Onayla" required autocomplete="Şifreyi Onayla">
-</div>
-</div>
-
-<div class="form-group row mb-0">
-<div class="col-md-6 offset-md-4">
-<button type="submit" class="btn btn-primary">
-    {{ __('KAYIT OL') }}
-</button>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 @endsection
-
-

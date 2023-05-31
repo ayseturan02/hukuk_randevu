@@ -1,5 +1,8 @@
+
+<!--BU APP.BLADE.PHP KISMI LOGİN VE REGİSTER ARAYÜZÜ İÇİN GEÇERLİDİR -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
         .form {
@@ -15,7 +18,6 @@
             margin: 100px auto;
             max-width: 500px;
         }
-
 
         .hr {
             position: absolute;
@@ -38,7 +40,7 @@
             padding-bottom: 2em;
             text-align: center;
             font-weight: bold;
-            font-family:Tahoma, Verdana, sans-serif;
+            font-family: Tahoma, Verdana, sans-serif;
             font-size: 20px;
         }
 
@@ -49,13 +51,11 @@
             outline: none;
             padding: 0.7em;
             transition: .4s ease-in-out;
-            font-family:Tahoma, Verdana, sans-serif;
-
+            font-family: Tahoma, Verdana, sans-serif;
         }
 
         .input:hover {
-            box-shadow: 6px 6px 0px #fe9347,
-            -3px -3px 10px #ffffff;
+            box-shadow: 6px 6px 0px #fe9347, -3px -3px 10px #ffffff;
         }
 
         .input:focus {
@@ -75,15 +75,13 @@
             transition: .4s ease-in-out;
             box-shadow: #fe9347 1px 1px 1px;
             font-size: 15px;
-            font-family:Tahoma, Verdana, sans-serif;
+            font-family: Tahoma, Verdana, sans-serif;
             width: 10em;
         }
 
         .form .btn:hover {
-            box-shadow: 6px 6px 0px #fe9347,
-            -3px -3px 10px #ffffff;
+            box-shadow: 6px 6px 0px #fe9347, -3px -3px 10px #ffffff;
             transform: translateX(-0.5em) translateY(-0.5em);
-
         }
 
         .form .btn:active {
@@ -102,21 +100,6 @@
         }
     </style>
 </head>
-<body style="background-color: #e3e3e3;">
-<form class="form">
-    <p class="heading">Giriş Yap</p>
-    <input class="input" placeholder="E-posta" type="email" name="E-posta" required>
-    <input class="input" placeholder="Şifre" type="password" name="Şifre" required>
-    <div class="row mb-0">
-    <button class="btn" href="home">Giriş Yap</button>
-    <button class="btn" href="onay">Yönetici Girişi</button>
-                
-    
-</form>
+    @yield('content')
 
 
-<div class="hr"></div>
-<div class="hr" style="bottom: 0;"></div>
-<h1> MAS HUKUK BÜROSU</h1>
-</body>
-</html>
