@@ -287,35 +287,49 @@
 
 
 </head>
-<body style="background-color:#D9D9D9;">
-<header><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <div class="container">
-        <header class="d-flex justify-content-center py-3" sty>
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" >Anasayfa</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Randevu</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Hizmetlerimiz</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">İletişim</a></li>
-            </ul>
-        </header>
-    </div></header>
+<body style="background-color:#E3E3E3;">
+    <header>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <div class="container">
+            <header class="d-flex justify-content-center py-3" sty>
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/randevu" class="nav-link active" aria-current="page">Randevu</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link">Anasayfa</a></li>
+                <li class="nav-item"><a href="/hizmetlerimiz" class="nav-link">Hizmetlerimiz</a></li>
+                <li class="nav-item"><a href="/iletisim" class="nav-link">İletişim</a></li>
+                @auth
+            <!-- Çıkış Yap Formu -->
+            <form action="{{ route('logout') }}" method="POST" class="d-flex">
+                @csrf
+                <button type="submit" class="btn btn-outline-success">Çıkış Yap</button>
+            </form>
+            @else
+            <form class="d-flex" role="search" onsubmit="submitForm(event)">
+                <input class="form-control me-2 text-white" type="search" placeholder="Search" aria-label="Search" id="register">
+                <button class="btn btn-outline-success" type="submit">ARAMA</button>
+            </form>
+            @endauth
+              </ul>
+            </header>
+          </div></header>
 <nav>
-    <div class="container">
-        <div class="tabs" >
-            <input type="radio" id="radio-1" name="tabs" >
-            <label class="tab" for="radio-1">Kadro</label>
-            <input type="radio" id="radio-2" name="tabs" checked="" >
-            <label class="tab" for="radio-2">Hizmet</label>
-            <input type="radio" id="radio-3" name="tabs">
-            <label class="tab" for="radio-3">Takvim</label>
-            <input type="radio" id="radio-4" name="tabs">
-            <label class="tab" for="radio-4">Saat</label>
-            <input type="radio" id="radio-5" name="tabs">
-            <label class="tab" for="radio-5">Onay</label>
-            <span class="glider"></span>
-        </div>
-    </div>
-</nav>
+            <div class="container">
+                <div class="tabs" >
+                    <input type="radio" id="radio-1" name="tabs" checked="">
+                    <label class="tab" for="radio-1">Kadro</label>
+                    <input type="radio" id="radio-2" name="tabs"  >
+                    <label class="tab" for="radio-2">Hizmet</label>
+                    <input type="radio" id="radio-3" name="tabs">
+                    <label class="tab" for="radio-3">Takvim</label>
+                    <input type="radio" id="radio-4" name="tabs">
+                    <label class="tab" for="radio-4">Saat</label>
+                    <input type="radio" id="radio-5" name="tabs">
+                    <label class="tab" for="radio-5">Onay</label>
+                    <span class="glider"></span>
+                </div>
+            </div>
+        </nav>
 
 
 <button id="ileri" style="position: absolute; top:12%; left:75%;" >
@@ -472,3 +486,4 @@
 
 </body>
 </html>
+@yield("content")
