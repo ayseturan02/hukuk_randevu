@@ -17,7 +17,7 @@
             </span>
         @enderror
 
-        <button class="btn" type="submit">Kayıt Ol</button>
+        <button class="btn" type="submit">Yönetici</button>
         <button class="btn" type="submit">Giriş Yap</button>
         </form>
 @endsection
