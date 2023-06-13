@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app3')
 @section('content')
 
 <body style="background-color:#E3E3E3;">

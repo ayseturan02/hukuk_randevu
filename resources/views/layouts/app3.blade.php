@@ -1,4 +1,4 @@
-<!--BU APP2.BLADE.PHP KISMI DİĞER ARAYÜZLER İÇİN GEÇERLİDİR -->
+<!--BU APP3.BLADE.PHP KISMI TEK RANDEVU SAYFASI İÇİN GEÇERLİDİR -->
 
 
 <!DOCTYPE html>
@@ -312,6 +312,22 @@ header{
               </ul>
             </header>
           </div></header>
-      
+          <nav>
+            <div class="container">
+                <div class="tabs" >
+                    <input type="radio" id="radio-1" name="tabs" checked="">
+                    <label class="tab" for="radio-1">Kadro</label>
+                    <input type="radio" id="radio-2" name="tabs"  >
+                    <label class="tab" for="radio-3"><a href="/hizmet">Hizmet</a></label>
+                    <input type="radio" id="radio-3" name="tabs">
+                    <label class="tab" for="radio-3"><a href="/takvim">Takvim</a></label>
+                    <input type="radio" id="radio-4" name="tabs">
+                    <label class="tab" for="radio-3"><a href="/saat">Saat</a></label>
+                    <input type="radio" id="radio-5" name="tabs">
+                    <label class="tab" for="radio-3"><a href="/onay">Onay</a></label>
+                    <span class="glider"></span>
+                </div>
+            </div>
+        </nav>
 @yield('content')
 
